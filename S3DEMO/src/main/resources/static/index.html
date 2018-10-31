@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AmazonS3Test</title>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-resource.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-messages.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-animate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script type="text/javascript" src="./angular/s3_module.js"></script>
+<script type="text/javascript" src="./angular/s3_controller.js"></script>
+<script type="text/javascript" src="./angular/s3_file_directive.js"></script>
+</head>
+<body>
+<div ng-app="s3App">	
+  <center>S3 AMAZON TEST</center>
+<div ng-controller="s3Ctrl">
+<div class="card border-success"  style="margin-top: 50px;width:500px">
+  <div class="card-body">Upload File To S3</div>
+ <input type = "file" file-model = "myFile"/>
+  <button type="button" class="btn btn-outline-success" ng-click="uploadFile()">Upload</button>
+</div>
+<div class="card border-primary"  style="margin-top: 50px;width:500px">
+  <div class="card-body">Download File To S3</div>
+  <input type="text" name="download" placeholder="enter the file name her" ng-model="requestDto.fileName" onchange="validateFileInput()"/>
+<button type="button" class="btn btn-outline-info" ng-click="downloadFile(requestDto)">Download</button>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+amazonProperties:
+  endpointUrl: https://s3.ap-south-1.amazonaws.com
+  accessKey: AKIAJI4UKPOJXXWN3MPA
+  secretKey: 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
+  bucketName: test-s3-curd
+ 
+server:
+  port : 8081
